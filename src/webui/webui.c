@@ -2045,7 +2045,7 @@ http_redir(http_connection_t *hc, const char *remain, void *opaque)
       if (lang) {
         snprintf(buf, sizeof(buf), "src/webui/static/intl/tvh.%s.js.gz", lang);
         if (!http_file_test(buf)) {
-          snprintf(buf, sizeof(buf), "/static/intl/tvh.%s.js.gz", lang);
+          snprintf(buf, sizeof(buf), "../static/intl/tvh.%s.js.gz", lang);
           http_redirect(hc, buf, NULL, 0);
           return 0;
         }
@@ -2062,7 +2062,7 @@ http_redir(http_connection_t *hc, const char *remain, void *opaque)
       if (theme) {
         snprintf(buf, sizeof(buf), "src/webui/static/tvh.%s.css.gz", theme);
         if (!http_file_test(buf)) {
-          snprintf(buf, sizeof(buf), "/static/tvh.%s.css.gz", theme);
+          snprintf(buf, sizeof(buf), "../static/tvh.%s.css.gz", theme);
           http_css_import(hc, buf);
           return 0;
         }
@@ -2074,7 +2074,7 @@ http_redir(http_connection_t *hc, const char *remain, void *opaque)
       if (theme) {
         snprintf(buf, sizeof(buf), "src/webui/static/extjs/resources/css/xtheme-%s.css", theme);
         if (!http_file_test(buf)) {
-          snprintf(buf, sizeof(buf), "/static/extjs/resources/css/xtheme-%s.css", theme);
+          snprintf(buf, sizeof(buf), "../static/extjs/resources/css/xtheme-%s.css", theme);
           http_css_import(hc, buf);
           return 0;
         }
@@ -2086,7 +2086,7 @@ http_redir(http_connection_t *hc, const char *remain, void *opaque)
       if (theme) {
         snprintf(buf, sizeof(buf), "src/webui/static/app/ext-%s.css", theme);
         if (!http_file_test(buf)) {
-          snprintf(buf, sizeof(buf), "/static/app/ext-%s.css", theme);
+          snprintf(buf, sizeof(buf), "../static/app/ext-%s.css", theme);
           http_css_import(hc, buf);
           return 0;
         }
